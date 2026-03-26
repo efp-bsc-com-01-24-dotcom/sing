@@ -1,4 +1,4 @@
-/* Reset some default spacing */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +10,17 @@ body {
     background: linear-gradient(135deg, #f0f4f8, #e0e8f0);
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;          
     padding: 20px;
     line-height: 1.6;
     color: #333;
+}
+
+main {
+    flex: 1;                          
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #card {
@@ -24,36 +30,34 @@ body {
     padding: 40px 30px;
     max-width: 900px;
     width: 100%;
-    border: none;
 }
 
 h1 {
-    color: #2a7da8;           /* nicer blue */
+    color: #2a7da8;
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 30px;
     font-weight: 600;
 }
 
-/* Multi-column container */
+
 .description {
-    column-count: 2;                 /* 2 columns */
-    column-width: 10px;
+    column-count: 2;
     column-gap: 50px;
-    column-rule: 1px solid #ddd;      /* vertical line between columns */
+    column-rule: 1px solid #ddd;
     text-align: justify;
 }
 
 .description p {
     margin-bottom: 1.4em;
     font-size: 1.05rem;
-    break-inside: avoid-column;       /* prevents ugly paragraph breaks */
+    break-inside: avoid-column;
 }
 
-/* Make it responsive */
+
 @media (max-width: 768px) {
     .description {
-        column-count: 1;              /* single column on mobile */
+        column-count: 1;
         column-rule: none;
     }
     
@@ -65,9 +69,37 @@ h1 {
         font-size: 1.9rem;
     }
 }
-footer{
-    position: absolute;
-    bottom: 0px;
 
-    align-items: center;
+
+footer {
+    background-color: #313131;
+    color: #ddd;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: auto;                 
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.footer-content p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 8px;
+    border-radius: 4px;
+}
+
+
+footer a:hover img {
+    transform: scale(1.1);
+    transition: transform 0.2s;
 }
